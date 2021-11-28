@@ -1,0 +1,212 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Regulacja_v2
+{
+    /// <summary>
+    /// Klasa przypisujaca domyslne wartosci do list, ktore wyswietlaja parametry programu, parametry regulatora, puste recepty, status regulatora.
+    /// </summary>
+    public class Listy
+    {
+    public static Listy L;
+    public Listy()
+        {
+            L = this;
+            GetListProgramy.Add(new Programy("Rodzaj startu programu (STRT)", 0, 0));
+            GetListProgramy.Add(new Programy("Wartość poczatkowa (SP0) [temp * 10]", 1, 0));
+            GetListProgramy.Add(new Programy("Jednostka czasu (TMUN) (0) - s, (1) - min", 2, 0));
+            GetListProgramy.Add(new Programy("Rodzaj blokady (HOLD)", 4, 0));
+            GetListProgramy.Add(new Programy("Liczba powtórzeń programu (CYCN)", 5, 0));
+            GetListProgramy.Add(new Programy("Reakcja po zaniku zasilania (FAIL)", 6, 0));
+            GetListProgramy.Add(new Programy("ODC 1 Rodzaj odcinka (TYPE)", 9, 0));
+            GetListProgramy.Add(new Programy("ODC 1 Temp zadana [temp * 10] (TSP)", 10, 0));
+            GetListProgramy.Add(new Programy("ODC 1 Czas trwania (TIME) [min/s]", 11, 0));
+            GetListProgramy.Add(new Programy("ODC 1 Blokada (HLDV) [temp * 10]", 13, 0));
+            GetListProgramy.Add(new Programy("ODC 1 Stan wyjść pomocniczych", 14, 0));
+            GetListProgramy.Add(new Programy("ODC 2 Rodzaj odcinka (TYPE)", 16, 0));
+            GetListProgramy.Add(new Programy("ODC 2 Temp zadana [temp * 10] (TSP)", 17, 0));
+            GetListProgramy.Add(new Programy("ODC 2 Czas trwania (TIME) [min/s]", 18, 0));
+            GetListProgramy.Add(new Programy("ODC 2 Blokada (HLDV) [temp * 10]", 20, 0));
+            GetListProgramy.Add(new Programy("ODC 2 Stan wyjść pomocniczych", 21, 0));
+            GetListProgramy.Add(new Programy("ODC 3 Rodzaj odcinka (TYPE)", 23, 0));
+            GetListProgramy.Add(new Programy("ODC 3 Temp zadana [temp * 10] (TSP)", 24, 0));
+            GetListProgramy.Add(new Programy("ODC 3 Czas trwania (TIME) [min/s]", 25, 0));
+            GetListProgramy.Add(new Programy("ODC 3 Blokada (HLDV) [temp * 10]", 27, 0));
+            GetListProgramy.Add(new Programy("ODC 3 Stan wyjść pomocniczych", 28, 0));
+            GetListProgramy.Add(new Programy("ODC 4 Rodzaj odcinka (TYPE)", 30, 0));
+            GetListProgramy.Add(new Programy("ODC 4 Temp zadana [temp * 10] (TSP)", 31, 0));
+            GetListProgramy.Add(new Programy("ODC 4 Czas trwania (TIME) [min/s]", 32, 0));
+            GetListProgramy.Add(new Programy("ODC 4 Blokada (HLDV) [temp * 10]", 34, 0));
+            GetListProgramy.Add(new Programy("ODC 4 Stan wyjść pomocniczych", 35, 0));
+            GetListProgramy.Add(new Programy("ODC 5 Rodzaj odcinka (TYPE)", 37, 0));
+            GetListProgramy.Add(new Programy("ODC 5 Temp zadana [temp * 10] (TSP)", 38, 0));
+            GetListProgramy.Add(new Programy("ODC 5 Czas trwania (TIME) [min/s]", 39, 0));
+            GetListProgramy.Add(new Programy("ODC 5 Blokada (HLDV) [temp * 10]", 41, 0));
+            GetListProgramy.Add(new Programy("ODC 5 Stan wyjść pomocniczych", 42, 0));
+            GetListProgramy.Add(new Programy("ODC 6 Rodzaj odcinka (TYPE)", 44, 0));
+            GetListProgramy.Add(new Programy("ODC 6 Temp zadana [temp * 10] (TSP)", 45, 0));
+            GetListProgramy.Add(new Programy("ODC 6 Czas trwania (TIME) [min/s]", 46, 0));
+            GetListProgramy.Add(new Programy("ODC 6 Blokada (HLDV)  [temp * 10]", 48, 0));
+            GetListProgramy.Add(new Programy("ODC 6 Stan wyjść pomocniczych", 49, 0));
+            GetListProgramy.Add(new Programy("ODC 7 Rodzaj odcinka (TYPE)", 51, 0));
+            GetListProgramy.Add(new Programy("ODC 7 Temp zadana [temp * 10] (TSP)", 52, 0));
+            GetListProgramy.Add(new Programy("ODC 7 Czas trwania (TIME) [min/s]", 53, 0));
+            GetListProgramy.Add(new Programy("ODC 7 Blokada (HLDV)  [temp * 10]", 55, 0));
+            GetListProgramy.Add(new Programy("ODC 7 Stan wyjść pomocniczych", 56, 0));
+            GetListProgramy.Add(new Programy("ODC 8 Rodzaj odcinka (TYPE)", 58, 0));
+            GetListProgramy.Add(new Programy("ODC 8 Temp zadana [temp * 10] (TSP)", 59, 0));
+            GetListProgramy.Add(new Programy("ODC 8 Czas trwania (TIME) [min/s]", 60, 0));
+            GetListProgramy.Add(new Programy("ODC 8 Blokada (HLDV)  [temp * 10]", 62, 0));
+            GetListProgramy.Add(new Programy("ODC 8 Stan wyjść pomocniczych", 63, 0));
+            GetListProgramy.Add(new Programy("ODC 9 Rodzaj odcinka (TYPE)", 65, 0));
+            GetListProgramy.Add(new Programy("ODC 9 Temp zadana [temp * 10] (TSP)", 66, 0));
+            GetListProgramy.Add(new Programy("ODC 9 Czas trwania (TIME) [min/s]", 67, 0));
+            GetListProgramy.Add(new Programy("ODC 9 Blokada (HLDV)  [temp * 10]", 69, 0));
+            GetListProgramy.Add(new Programy("ODC 9 Stan wyjść pomocniczych", 70, 0));
+            GetListProgramy.Add(new Programy("ODC 10 Rodzaj odcinka (TYPE)", 72, 0));
+            GetListProgramy.Add(new Programy("ODC 10 Temp zadana [temp * 10] (TSP)", 73, 0));
+            GetListProgramy.Add(new Programy("ODC 10 Czas trwania (TIME) [min/s]", 74, 0));
+            GetListProgramy.Add(new Programy("ODC 10 Blokada (HLDV)  [temp * 10]", 76, 0));
+            GetListProgramy.Add(new Programy("ODC 10 Stan wyjść pomocniczych", 76, 0));
+            GetListProgramy.Add(new Programy("ODC 11 Rodzaj odcinka (TYPE)", 79, 0));
+            GetListProgramy.Add(new Programy("ODC 11 Temp zadana [temp * 10] (TSP)", 80, 0));
+            GetListProgramy.Add(new Programy("ODC 11 Czas trwania (TIME) [min/s]", 81, 0));
+            GetListProgramy.Add(new Programy("ODC 11 Blokada (HLDV)  [temp * 10]", 83, 0));
+            GetListProgramy.Add(new Programy("ODC 11 Stan wyjść pomocniczych", 84, 0));
+            GetListProgramy.Add(new Programy("ODC 12 Rodzaj odcinka (TYPE)", 86, 0));
+            GetListProgramy.Add(new Programy("ODC 12 Temp zadana [temp * 10] (TSP)", 87, 0));
+            GetListProgramy.Add(new Programy("ODC 12 Czas trwania (TIME) [min/s]", 88, 0));
+            GetListProgramy.Add(new Programy("ODC 12 Blokada (HLDV)  [temp * 10]", 90, 0));
+            GetListProgramy.Add(new Programy("ODC 12 Stan wyjść pomocniczych", 91, 0));
+            GetListProgramy.Add(new Programy("ODC 13 Rodzaj odcinka (TYPE)", 93, 0));
+            GetListProgramy.Add(new Programy("ODC 13 Temp zadana [temp * 10] (TSP)", 94, 0));
+            GetListProgramy.Add(new Programy("ODC 13 Czas trwania (TIME) [min/s]", 95, 0));
+            GetListProgramy.Add(new Programy("ODC 13 Blokada (HLDV)  [temp * 10]", 97, 0));
+            GetListProgramy.Add(new Programy("ODC 13 Stan wyjść pomocniczych", 98, 0));
+            GetListProgramy.Add(new Programy("ODC 14 Rodzaj odcinka (TYPE)", 100, 0));
+            GetListProgramy.Add(new Programy("ODC 14 Temp zadana [temp * 10] (TSP)", 101, 0));
+            GetListProgramy.Add(new Programy("ODC 14 Czas trwania (TIME) [min/s]", 102, 0));
+            GetListProgramy.Add(new Programy("ODC 14 Blokada (HLDV)  [temp * 10]", 104, 0));
+            GetListProgramy.Add(new Programy("ODC 14 Stan wyjść pomocniczych", 105, 0));
+            GetListProgramy.Add(new Programy("ODC 15 Rodzaj odcinka (TYPE)", 107, 0));
+            GetListProgramy.Add(new Programy("ODC 15 Temp zadana [temp * 10] (TSP)", 108, 0));
+            GetListProgramy.Add(new Programy("ODC 15 Czas trwania (TIME) [min/s]", 109, 0));
+            GetListProgramy.Add(new Programy("ODC 15 Blokada (HLDV)  [temp * 10]", 111, 0));
+            GetListProgramy.Add(new Programy("ODC 15 Stan wyjść pomocniczych", 112, 0));
+
+            GetRecepty.Add(new Recepta(1, ""));
+            GetRecepty.Add(new Recepta(2, ""));
+            GetRecepty.Add(new Recepta(3, ""));
+            GetRecepty.Add(new Recepta(4, ""));
+            GetRecepty.Add(new Recepta(5, ""));
+            GetRecepty.Add(new Recepta(6, ""));
+            GetRecepty.Add(new Recepta(7, ""));
+            GetRecepty.Add(new Recepta(8, ""));
+            GetRecepty.Add(new Recepta(9, ""));
+            GetRecepty.Add(new Recepta(10, ""));
+            GetRecepty.Add(new Recepta(11, ""));
+            GetRecepty.Add(new Recepta(12, ""));
+            GetRecepty.Add(new Recepta(13, ""));
+            GetRecepty.Add(new Recepta(14, ""));
+            GetRecepty.Add(new Recepta(15, ""));
+
+            GetParametryKonfiguracyjne.Add(new Programy("Jednostka temperatury [C/F] (UNIT)", 0, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Rodzaj czujnika temperatury (INPT)", 1, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Pozycja punktu dziesiętnego wejścia głównego (DP)", 2, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Stała czasowa filtra (FILT)", 10, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wejścia binarnego 1 (BNI1)", 11, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wejścia binarnego 2 (BNI2)", 12, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wyjścia 1 (OUT1)", 13, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Typ wyjścia 1 (O1TY)", 14, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wyjścia 2 (OUT2)", 16, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Typ wyjścia 2 (O2TY)", 17, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wyjścia 3 (OUT3)", 18, 0));
+            GetParametryKonfiguracyjne.Add(new Programy("Funkcja wyjścia 4 (OUT4)", 19, 0));
+
+            GetParametryRegulacji.Add(new Programy("Algorytm regulacji (ALG)", 0, 0));
+            GetParametryRegulacji.Add(new Programy("Rodzaj regulacji (TYPE)", 1, 0));
+            GetParametryRegulacji.Add(new Programy("Histereza (HY)", 2, 0));
+            GetParametryRegulacji.Add(new Programy("Funkcja Gain Scheduling (GTY)", 3, 0));
+            GetParametryRegulacji.Add(new Programy("Wybór zestawu PID (GSET)", 8, 0));
+            GetParametryRegulacji.Add(new Programy("PID1: Zakres proporcjonalności (PB)", 9, 0));
+            GetParametryRegulacji.Add(new Programy("PID1: Stała czasowa całkowania (TI) [s]", 10, 0));
+            GetParametryRegulacji.Add(new Programy("PID1: Stała czasowa różniczkowania (TD) [s * 10]", 11, 0));
+            GetParametryRegulacji.Add(new Programy("PID1: Korekta sygnału sterujacego (Y0) [% * 10]", 12, 0));
+            GetParametryRegulacji.Add(new Programy("PID2: Zakres proporcjonalności (PB2)", 13, 0));
+            GetParametryRegulacji.Add(new Programy("PID2: Stała czasowa całkowania (TI2) [s]", 14, 0));
+            GetParametryRegulacji.Add(new Programy("PID2: Stała czasowa różniczkowania (TD2) [s * 10]", 15, 0));
+            GetParametryRegulacji.Add(new Programy("PID2: Korekta sygnału sterujacego (Y02) [% * 10]", 16, 0));
+            GetParametryRegulacji.Add(new Programy("PID3: Zakres proporcjonalności (PB3)", 17, 0));
+            GetParametryRegulacji.Add(new Programy("PID3: Stała czasowa całkowania (TI3) [s]", 18, 0));
+            GetParametryRegulacji.Add(new Programy("PID3: Stała czasowa różniczkowania (TD3) [s * 10]", 19, 0));
+            GetParametryRegulacji.Add(new Programy("PID3: Korekta sygnału sterujacego (Y03) [% * 10]", 20, 0));
+            GetParametryRegulacji.Add(new Programy("PID4: Zakres proporcjonalności (PB4)", 21, 0));
+            GetParametryRegulacji.Add(new Programy("PID4: Stała czasowa całkowania (TI4) [s]", 22, 0));
+            GetParametryRegulacji.Add(new Programy("PID4: Stała czasowa różniczkowania (TD4) [s * 10]", 23, 0));
+            GetParametryRegulacji.Add(new Programy("PID4: Korekta sygnału sterujacego (Y04) [% * 10]", 24, 0));
+            GetParametryRegulacji.Add(new Programy("Okres impulsowania wyjścia 1 (TO1) [s * 10]", 25, 0));
+            GetParametryRegulacji.Add(new Programy("Okres impulsowania wyjścia 2 (TO2) [s * 10]", 30, 0));
+            GetParametryRegulacji.Add(new Programy("Okres impulsowania wyjścia 3 (TO3) [s * 10]", 77, 0));
+            GetParametryRegulacji.Add(new Programy("Okres impulsowania wyjścia 4 (TO4) [s * 10]", 78, 0));
+            GetParametryRegulacji.Add(new Programy("Czas otwarcia zaworu (TMVO) [s * 10]", 82, 0));
+            GetParametryRegulacji.Add(new Programy("Czas zamknięcia zaworu (TMVC) [s * 10]", 83, 0));
+            GetParametryRegulacji.Add(new Programy("Minimalny czas pracy zaworu (MNTV) [s * 10]", 84, 0));
+            GetParametryRegulacji.Add(new Programy("Minimalny sygnał sterujacy (YLO) [% * 10]", 85, 0));
+            GetParametryRegulacji.Add(new Programy("Maksymalny sygnał sterujacy (YHI) [% * 10]", 86, 0));
+
+
+            GetParametryAlarmow.Add(new Programy("Wartość zadana dla alarmu bezwzględnego 1 (A1SP)", 0, 0));
+            GetParametryAlarmow.Add(new Programy("Odchyłka od wartości zadanej dla alarmu 1 względnego (A1DV)", 1, 0));
+            GetParametryAlarmow.Add(new Programy("Histereza dla alarmu 1 (A1HY)", 2, 0));
+            GetParametryAlarmow.Add(new Programy("Pamięć alarmu 1 (A1LT)", 3, 0));
+            GetParametryAlarmow.Add(new Programy("Wartość zadana dla alarmu bezwzględnego 2 (A2SP)", 4, 0));
+            GetParametryAlarmow.Add(new Programy("Odchyłka od wartości zadanej dla alarmu 2 względnego (A2DV)", 5, 0));
+            GetParametryAlarmow.Add(new Programy("Histereza dla alarmu 2 (A2HY)", 6, 0));
+            GetParametryAlarmow.Add(new Programy("Pamięć alarmu 2 (A2LT)", 7, 0));
+            GetParametryAlarmow.Add(new Programy("Wartość zadana dla alarmu bezwzględnego 3 (A3SP)", 8, 0));
+            GetParametryAlarmow.Add(new Programy("Odchyłka od wartości zadanej dla alarmu 3 względnego (A3DV)", 9, 0));
+            GetParametryAlarmow.Add(new Programy("Histereza dla alarmu 3 (A3HY)", 10, 0));
+            GetParametryAlarmow.Add(new Programy("Pamięć alarmu 3 (A3LT)", 11, 0));
+            GetParametryAlarmow.Add(new Programy("Wartość zadana dla alarmu bezwzględnego 4 (A4SP)", 12, 0));
+            GetParametryAlarmow.Add(new Programy("Odchyłka od wartości zadanej dla alarmu 4 względnego (A4DV)", 13, 0));
+            GetParametryAlarmow.Add(new Programy("Histereza dla alarmu 4 (A4HY)", 14, 0));
+            GetParametryAlarmow.Add(new Programy("Pamięć alarmu 4 (A4LT)", 15, 0));
+
+            GetStatusRegulatora.Add(new Status("Samostrojenie zakończone niepowodzeniem: ", ' '));
+            GetStatusRegulatora.Add(new Status("Miękki start aktywny: ", ' '));
+            GetStatusRegulatora.Add(new Status("Status timera: ", ' '));
+            GetStatusRegulatora.Add(new Status("Tryb pracy: 0 - auto, 1 - ręczna ", ' '));
+            GetStatusRegulatora.Add(new Status("Samostrojenie aktywne: ", ' '));
+            GetStatusRegulatora.Add(new Status("Wartość mierzona poza zakresem pomiarowym: ", ' '));
+            GetStatusRegulatora.Add(new Status("Wartość mierzona na wejściu dodatkowym poza zakresem pomiarowym: ", ' '));
+            GetStatusRegulatora.Add(new Status("Bład regulatora: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan alarmu 1: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan alarmu 2: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan alarmu 3: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan alarmu 4: ", ' '));
+            GetStatusRegulatora.Add(new Status("Alarm przepalenia grzałki: ", ' '));
+            GetStatusRegulatora.Add(new Status("Alarm stałego zwarcia wyjścia: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wejścia 1: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wejścia 2: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wyjścia 1: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wyjścia 2: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wyjścia 3: ", ' '));
+            GetStatusRegulatora.Add(new Status("Stan wyjścia 4: ", ' '));
+            GetStatusRegulatora.Add(new Status("Rozkalibrowane wejście: ", ' '));
+            GetStatusRegulatora.Add(new Status("Rozkalibrowane wejście dodatkowe: ", ' '));
+            GetStatusRegulatora.Add(new Status("Rozkalibrowane wyjście analogowe 1: ", ' '));
+            GetStatusRegulatora.Add(new Status("Rozkalibrowane wyjście analogowe 2: ", ' '));
+            GetStatusRegulatora.Add(new Status("Bład sumy kontrolnej pamięci regulatora: ", ' '));
+        }
+        public List<Programy> GetListProgramy { get; } = new List<Programy>();
+        public List<Recepta> GetRecepty { get; } = new List<Recepta>();
+        public List<Programy> GetParametryKonfiguracyjne { get; } = new List<Programy>();
+        public List<Programy> GetParametryRegulacji { get; } = new List<Programy>();
+        public List<Programy> GetParametryAlarmow { get; } = new List<Programy>();
+        public List<Status> GetStatusRegulatora { get; } = new List<Status>();
+
+    }
+}
